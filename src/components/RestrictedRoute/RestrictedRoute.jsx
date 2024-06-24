@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
-import { Route, Redirect} from "react-router-dom"
+import { Route } from "react-router-dom"
+import { Navigate } from 'react-router-dom';
 
 
 const RestrictedRoute = ({component: Component, isLoggedIn, ...rest}) => {
@@ -9,7 +10,7 @@ const RestrictedRoute = ({component: Component, isLoggedIn, ...rest}) => {
    {...rest}
    render={(props)=>
     isAuthenticated ? (
-        <Redirect to="/contacts"/>
+        <Navigate to="/contacts"/>
     ) : (
         <Component {...props}/>
     )
