@@ -1,5 +1,6 @@
-import  { useState } from 'react';
+// RegistrationForm component
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { register } from '../../redux/auth/authOps';
 
 const RegistrationForm = () => {
@@ -10,7 +11,7 @@ const RegistrationForm = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-               dispatch(register({ name, email, password }));
+        dispatch(register({ name, email, password })); 
     };
 
     return (
