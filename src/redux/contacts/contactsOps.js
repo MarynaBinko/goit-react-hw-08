@@ -2,8 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const BASE_URL = 'https://connections-api.goit.global';
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZjUwMGJiNmQ1NzJiN2QzZGM2NTI2YWM2N2ZkYTU5YiIsInN1YiI6IjY2NWYwNDEwZjVlMjQwNDA4M2Y4NWQyZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SpdJQ_vH6ps7XHWmOcPLJobqrxzRtLJQalp-VcpJxdk';
-
 
 export const fetchContacts =createAsyncThunk(
   "contacts/fetchAll",
@@ -11,7 +9,7 @@ export const fetchContacts =createAsyncThunk(
     try {
       const response=await axios.get(`${BASE_URL}/contacts`, {
         headers: {
-          Authorization: token, 
+          Authorization: `Bearer your_token_here`, 
         },
       });
       return response.data;
@@ -28,7 +26,7 @@ export const addContact = createAsyncThunk(
     try {
       const response=await axios.post(`${BASE_URL}/contacts`, {
         headers: {
-          Authorization: token, 
+          Authorization: `Bearer your_token_here`, 
         },
       });
       return response.data;
@@ -44,7 +42,7 @@ export const deleteContact=createAsyncThunk(
     try {
       await axios.delete(`${BASE_URL}/contacts/${id}`, {
         headers: {
-          Authorization: token, 
+          Authorization: `Bearer your_token_here`, 
         },
       });
       return id;
