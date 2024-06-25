@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectLoading, selectError, selectFilteredContacts } from '../../redux/contacts/slice';
+import {  selectFilteredContacts } from '../../redux/contacts/slice';
 import { fetchContacts } from '../../redux/contacts/operations';
+import {selectLoading, selectError } from '../../redux/contacts/selectors';
 import Contact from '../Contact/Contact';
 import styles from "./ContactList.module.css";
 
@@ -37,7 +38,7 @@ if (error){
   );
 }
 
-export default ContactList
+export default ContactList;
 
 
 // import { useSelector } from 'react-redux';
