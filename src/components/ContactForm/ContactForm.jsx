@@ -1,6 +1,6 @@
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid';
+
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
@@ -20,7 +20,7 @@ const ContactForm = () => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(addContact({ id: nanoid(), ...values }));
+    dispatch(addContact(values));
     resetForm();
   };
 

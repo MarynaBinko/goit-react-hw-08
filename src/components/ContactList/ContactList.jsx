@@ -18,6 +18,7 @@ const ContactList = () => {
   useEffect(()=>{
     dispatch(fetchContacts())
   },[dispatch]);
+  console.log(contacts);
 
 if(loading){
   return <p>Loading...</p>;
