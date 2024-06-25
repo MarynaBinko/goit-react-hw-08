@@ -6,14 +6,23 @@ import SearchBox  from '../../components/SearchBox/SearchBox';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { selectLoading } from '../../redux/contacts/selectors';
 import ContactForm from '../../components/ContactForm/ContactForm';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { Navigate } from 'react-router-dom';
 
 export default function TasksPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+    if(isLoggedIn){
+      dispatch(fetchContacts());}
+    
+  }, [dispatch, isLoggedIn]);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <>
