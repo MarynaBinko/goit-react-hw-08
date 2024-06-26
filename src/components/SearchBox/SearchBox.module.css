@@ -5,16 +5,15 @@
     margin-bottom: 12px;
   }
   
-  .input {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    font: inherit;
-    line-height: 16px;
-    letter-spacing: 0.01em;
-    resize: none;
-  }
+  .input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
   
   .button {
     border: none;
